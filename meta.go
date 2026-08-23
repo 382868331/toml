@@ -109,7 +109,7 @@ outer:
 				// "Inline" isBareKeyChar
 				if !((r >= 'A' && r <= 'Z') || (r >= 'a' && r <= 'z') || (r >= '0' && r <= '9') || r == '_' || r == '-') {
 					b.WriteByte('"')
-					b.WriteString(kk)
+					b.WriteString(dblQuotedReplacer.Replace(kk))
 					b.WriteByte('"')
 					continue outer
 				}

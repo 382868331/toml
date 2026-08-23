@@ -9,3 +9,10 @@ func TestTask017QuoteInKey(t *testing.T) {
 		t.Fatalf("Key.String=%q, want %q", got, want)
 	}
 }
+func TestTask017BackslashInKey(t *testing.T) {
+	got := Key{`a\b`}.String()
+	want := `"a\\b"`
+	if got != want {
+		t.Fatalf("Key.String=%q, want %q", got, want)
+	}
+}
