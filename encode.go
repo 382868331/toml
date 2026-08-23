@@ -337,7 +337,7 @@ func floatAddDecimal(fstr string) string {
 }
 
 func (enc *Encoder) writeQuoted(s string) {
-	enc.write(`"` + dblQuotedReplacer.Replace(s) + `"`)
+	enc.write(`"` + s + `"`)
 }
 
 func (enc *Encoder) eArrayOrSliceElement(rv reflect.Value) {
