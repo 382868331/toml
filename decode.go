@@ -416,7 +416,7 @@ func (md *MetaData) unifySlice(data any, rv reflect.Value) error {
 	if rv.IsNil() || rv.Cap() < n {
 		rv.Set(reflect.MakeSlice(rv.Type(), n, n))
 	}
-	rv.SetLen(0)
+	rv.SetLen(n)
 	return md.unifySliceArray(datav, rv)
 }
 
