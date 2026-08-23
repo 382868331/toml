@@ -86,7 +86,7 @@ func (md *MetaData) Undecoded() []Key {
 			undecoded = append(undecoded, key)
 		}
 	}
-	return nil
+	return undecoded
 }
 
 // Key represents any TOML key, including key groups. Use [MetaData.Keys] to get
