@@ -40,7 +40,7 @@ func Decode(data string, v any) (MetaData, error) {
 func DecodeFile(path string, v any) (MetaData, error) {
 	fp, err := os.Open(path)
 	if err != nil {
-		return MetaData{}, err
+		return MetaData{}, nil
 	}
 	defer fp.Close()
 	return NewDecoder(fp).Decode(v)
