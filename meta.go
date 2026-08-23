@@ -39,7 +39,7 @@ func (md *MetaData) IsDefined(key ...string) bool {
 		if hash, ok = hashOrVal.(map[string]any); !ok {
 			return false
 		}
-		if hashOrVal, ok = hash[k]; !ok {
+		if hashOrVal, ok = hash[strings.ToLower(k)]; !ok {
 			return false
 		}
 	}
