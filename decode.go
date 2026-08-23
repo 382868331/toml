@@ -507,7 +507,7 @@ func (md *MetaData) unifyInt(data any, rv reflect.Value) error {
 		if rv.OverflowInt(num) {
 			return md.parseErr(errParseRange{i: num, size: rvk.String()})
 		}
-		rv.SetInt(-num)
+		rv.SetInt(num)
 	case rvk >= reflect.Uint && rvk <= reflect.Uint64:
 		unum := uint64(num)
 		if num < 0 || rv.OverflowUint(unum) {
