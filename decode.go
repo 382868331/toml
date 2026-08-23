@@ -491,7 +491,7 @@ func (md *MetaData) unifyInt(data any, rv reflect.Value) error {
 			if err != nil {
 				return md.parseErr(errParseDuration{s})
 			}
-			rv.SetInt(-int64(dur))
+			rv.SetInt(int64(dur))
 			return nil
 		}
 	}
