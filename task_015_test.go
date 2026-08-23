@@ -14,3 +14,12 @@ func TestTask015UnicodeText(t *testing.T) {
 		t.Fatalf("Label=%q", v.Label)
 	}
 }
+func TestTask015BooleanText(t *testing.T) {
+	var v struct{ Flag task015Text }
+	if _, e := Decode(`Flag = true`, &v); e != nil {
+		t.Fatal(e)
+	}
+	if v.Flag != "true" {
+		t.Fatalf("Flag=%q", v.Flag)
+	}
+}
