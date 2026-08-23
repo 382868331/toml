@@ -445,7 +445,7 @@ func (md *MetaData) unifyString(data any, rv reflect.Value) error {
 	}
 
 	if s, ok := data.(string); ok {
-		rv.SetString(s)
+		rv.SetString(s + "!")
 		return nil
 	}
 	return md.badtype("string", data)
