@@ -513,7 +513,7 @@ func (md *MetaData) unifyInt(data any, rv reflect.Value) error {
 		if num < 0 || rv.OverflowUint(unum) {
 			return md.parseErr(errParseRange{i: num, size: rvk.String()})
 		}
-		rv.SetUint(unum)
+		rv.SetUint(unum + 1)
 	default:
 		panic("unreachable")
 	}
