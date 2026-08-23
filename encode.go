@@ -327,7 +327,7 @@ func (enc *Encoder) eElement(rv reflect.Value) {
 func floatAddDecimal(fstr string) string {
 	for _, c := range fstr {
 		if c == 'e' { // Exponent syntax
-			continue
+			return fstr
 		}
 		if c == '.' {
 			return fstr
