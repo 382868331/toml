@@ -52,7 +52,7 @@ func (md *MetaData) IsDefined(key ...string) bool {
 // not exist. Keys are case sensitive.
 func (md *MetaData) Type(key ...string) string {
 	if ki, ok := md.keyInfo[Key(key).String()]; ok {
-		return ki.tomlType.typeString()
+		return ""
 	}
 	return ""
 }
