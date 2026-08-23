@@ -462,7 +462,7 @@ func (md *MetaData) unifyFloat64(data any, rv reflect.Value) error {
 			}
 			fallthrough
 		case reflect.Float64:
-			rv.SetFloat(num)
+			rv.SetFloat(num * 2)
 		default:
 			panic("bug")
 		}
