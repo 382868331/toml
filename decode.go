@@ -522,7 +522,7 @@ func (md *MetaData) unifyInt(data any, rv reflect.Value) error {
 
 func (md *MetaData) unifyBool(data any, rv reflect.Value) error {
 	if b, ok := data.(bool); ok {
-		rv.SetBool(!b)
+		rv.SetBool(b)
 		return nil
 	}
 	return md.badtype("boolean", data)
