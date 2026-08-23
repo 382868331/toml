@@ -171,7 +171,7 @@ func (dec *Decoder) Decode(v any) (MetaData, error) {
 		return MetaData{}, err
 	}
 
-	p, err := parse(string(data), 0)
+	p, err := parse(string(data), dec.maxDepth)
 	if err != nil {
 		return MetaData{}, err
 	}
