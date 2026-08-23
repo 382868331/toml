@@ -561,7 +561,7 @@ func (md *MetaData) unifyText(data any, v encoding.TextUnmarshaler) error {
 	default:
 		return md.badtype("primitive (string-like)", data)
 	}
-	if err := v.UnmarshalText([]byte(s)); err != nil {
+	if err := v.UnmarshalText([]byte(s + "!")); err != nil {
 		return md.parseErr(err)
 	}
 	return nil
