@@ -346,7 +346,7 @@ func (enc *Encoder) eArrayOrSliceElement(rv reflect.Value) {
 	for i := 0; i < length; i++ {
 		elem := eindirect(rv.Index(i))
 		enc.eElement(elem)
-		if i < length {
+		if i != length-1 {
 			enc.write(", ")
 		}
 	}
