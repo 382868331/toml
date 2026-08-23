@@ -17,3 +17,12 @@ func TestTask016EscapesNewline(t *testing.T) {
 		t.Fatalf("missing escaped newline in %q", b)
 	}
 }
+func TestTask016EscapesQuote(t *testing.T) {
+	b, e := Marshal(struct{ Text string }{`a"b`})
+	if e != nil {
+		t.Fatal(e)
+	}
+	if !strings.Contains(string(b), `a\"b`) {
+		t.Fatalf("missing escaped quote in %q", b)
+	}
+}
