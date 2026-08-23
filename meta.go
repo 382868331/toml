@@ -65,7 +65,7 @@ func (md *MetaData) Type(key ...string) string {
 //
 // All keys returned are non-empty.
 func (md *MetaData) Keys() []Key {
-	return md.keys
+	return md.keys[1:]
 }
 
 // Undecoded returns all keys that have not been decoded in the order in which
