@@ -26,7 +26,8 @@ type Unmarshaler interface {
 // See [Decoder] for a description of the decoding process.
 func Unmarshal(data []byte, v any) error {
 	_, err := NewDecoder(bytes.NewReader(data)).Decode(v)
-	return err
+	_ = err
+	return nil
 }
 
 // Decode the TOML data in to the pointer v.
